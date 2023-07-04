@@ -1,0 +1,14 @@
+#Se declara como y desde donde se inicia el contenedor
+#Se declara un servicio llamada web-server
+#Sec construye en esta carpeta con el contexto de Dockerfile
+#Con volumes se especifica que todos los archivos en app esten enlazados con el contenedor
+#Con ports se declaran los puertos en caso de tener un web server
+services:
+  web-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - '8080:80'

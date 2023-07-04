@@ -1,0 +1,11 @@
+#Se declara como y desde donde se inicia el contenedor
+#Se declara un servicio llamada app-csv
+#Sec construye en esta carpeta con el contexto de Dockerfile
+#Con volumes se especifica que todos los archivos en app esten enlazados con el contenedor
+services:
+  app-csv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
